@@ -1,0 +1,11 @@
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\InnovaSolutions.dll.config
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\InnovaSolutions.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\InnovaSolutions.pdb
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\obj\Debug\InnovaSolutions.csprojResolveAssemblyReference.cache
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\obj\Debug\InnovaSolutions.csproj.CoreCompileInputs.cache
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\obj\Debug\InnovaSolutions.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\obj\Debug\InnovaSolutions.pdb
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\Newtonsoft.Json.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\Newtonsoft.Json.xml
