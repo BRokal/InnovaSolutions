@@ -31,6 +31,15 @@ namespace InnovaSolutions.Vistas.Teacher {
         protected global::System.Web.UI.WebControls.TextBox txt_title;
         
         /// <summary>
+        /// Control txt_cant.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_cant;
+        
+        /// <summary>
         /// Control btn_finish.
         /// </summary>
         /// <remarks>

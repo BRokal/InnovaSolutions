@@ -14,7 +14,7 @@ namespace InnovaSolutions
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.Probar();
+            //con.Probar();
         }
 
         protected void btnIniciar_Click1(object sender, EventArgs e)
@@ -22,6 +22,7 @@ namespace InnovaSolutions
             bool entrar = con.Iniciar(txtUsuario.Text, txtContrasena.Text);
             if (entrar)
             {
+                /*
                 switch (Conexion.Usuario_Tipo)
                 {
                     case "E":
@@ -34,6 +35,8 @@ namespace InnovaSolutions
                         Response.Redirect("Admin/AdministrarUsuario.aspx");
                         break;
                 }
+                */
+                Response.Redirect("Menu.aspx");
             }
             else
             {
@@ -44,6 +47,11 @@ namespace InnovaSolutions
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Registrar.aspx");
+        }
+
+        protected void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

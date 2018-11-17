@@ -16,13 +16,13 @@ namespace InnovaSolutions
     public partial class ResponderExamen : System.Web.UI.Page
     {
         Conexion con = new Conexion();
-        public SqlConnection conex = new SqlConnection("Data Source=KEVIN_PC\\SQLEXPRESS;Initial Catalog=InnovaSolutions;Integrated Security=True;");
+        public SqlConnection conex = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=InnovaSolutions;Integrated Security=True;");
 
         List<string> exam = new List<string>();
         List<int> answers = new List<int>();
 
         public string examOut = "";
-        string user = Conexion.Usuario_Conectado;
+        string user = Conexion.Id_Conectado;
         string test = "";
         int current = 0;
 
@@ -75,7 +75,7 @@ namespace InnovaSolutions
             {
                 //Se llama al método que inserta la complecion del examen al sistema
                 Response.Write("<script>alert('" + con.Insertar_Examen(id_usuario, id_examen, nota) + "');</script>");
-                Response.Redirect("ListExams.aspx");
+                Response.Redirect("ResultScreen.aspx?score=" + score);
             }
         }
 

@@ -12,7 +12,7 @@ namespace InnovaSolutions
         Conexion con = new Conexion();
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.Probar();
+            //con.Probar();
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace InnovaSolutions
                 }
                 else
                 {
-                    labMostrar.Text = con.Insertar(txtUsuario.Text, txtContrasena.Text, ddlTipo.SelectedItem.Text, num);
+                    labMostrar.Text = con.Insertar(txtUsuario.Text, txtContrasena.Text, ddlTipo.SelectedItem.Text, 0, ddlMembresia.SelectedItem.Text);
                 }
             }
             catch (Exception error)
@@ -43,6 +43,11 @@ namespace InnovaSolutions
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
+        }
+
+        protected void ddlTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,16 +14,19 @@ namespace InnovaSolutions.Vistas.Teacher
     public partial class EditarExamen : System.Web.UI.Page
     {
         Conexion con = new Conexion();
-        public SqlConnection conex = new SqlConnection("Data Source=KEVIN_PC\\SQLEXPRESS;Initial Catalog=InnovaSolutions;Integrated Security=True;");
+        public SqlConnection conex = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=InnovaSolutions;Integrated Security=True;");
         
         List<string> exam = new List<string>();
         
         public string examOut = "";
+        public string gotIds = "";
+        public string gotCats = "";
         string test = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
             test = Request.QueryString["Exam"];
+            LoadCategories();
             LoadExam();
         }
 
@@ -55,7 +58,8 @@ namespace InnovaSolutions.Vistas.Teacher
                         pregunta = p["Pregunta"].ToString(),
                         respuestas = p["Respuestas"].ToString().Split(','),
                         correcta = Convert.ToInt32(p["Correcta"].ToString()),
-                        grafico = p["Grafico"].ToString()
+                        grafico = p["Grafico"].ToString(),
+                        id_categoria = p["Id_Categoria"].ToString()
                     }
                     );
                     exam.Add(jsond);
@@ -68,7 +72,6 @@ namespace InnovaSolutions.Vistas.Teacher
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e + " But hey, you can always try again :)");
-                throw;
             }
         }
 
@@ -76,6 +79,9 @@ namespace InnovaSolutions.Vistas.Teacher
         {
             try
             {
+                string cant = txt_cant.Value;
+                if (string.IsNullOrWhiteSpace(cant)) { cant = "0"; }
+
                 SqlCommand com;
                 string ph = "Place Holder";
 
@@ -83,7 +89,8 @@ namespace InnovaSolutions.Vistas.Teacher
                 com = conex.CreateCommand();
                 com.CommandText =
                     "UPDATE Examen SET " +
-                    "Nombre = '" + txt_title.Text + "' " +
+                    "Nombre = '" + txt_title.Text + "', " + 
+                    "Cantidad = " + cant + " " +
                     "WHERE ID_Examen = " + test + "; " +
                     "DELETE FROM Pregunta " +
                     "WHERE ID_Examen = " + test;
@@ -95,10 +102,11 @@ namespace InnovaSolutions.Vistas.Teacher
                     string cmd =
                         "INSERT INTO Pregunta VALUES (" +
                         test + ", " +
+                        p.id_categoria + ", " +
                         "'" + p.pregunta + "', " +
                         "'" + string.Join(",", p.respuestas) + "', " +
                         p.correcta + ", " +
-                        "'" + p.grafico + "');";
+                        "\"" + p.grafico + "\");";
 
                     System.Diagnostics.Debug.WriteLine(cmd);
                     com.CommandText = cmd;
@@ -113,8 +121,32 @@ namespace InnovaSolutions.Vistas.Teacher
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e + " But hey, you can always try again :)");
-                throw;
             }
+        }
+
+        void LoadCategories()
+        {
+            List<string> ids = new List<string>();
+            List<string> cats = new List<string>();
+            SqlCommand com;
+
+            conex.Open();
+            com = conex.CreateCommand();
+            com.CommandText = "SELECT * FROM Categorias";
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            foreach (DataRow c in dt.Rows)
+            {
+                ids.Add(c["Id_Categoria"].ToString());
+                cats.Add(c["Nombre"].ToString());
+            }
+            gotIds = String.Join("▄", ids.ToArray());
+            gotCats = String.Join("▄", cats.ToArray());
+
+            com.Cancel();
+            conex.Close();
         }
     }
 }

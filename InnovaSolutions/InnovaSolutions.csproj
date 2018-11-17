@@ -78,10 +78,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\Amazon.png" />
+    <Content Include="Imagenes\Coca.png" />
+    <Content Include="Imagenes\Fortnite.png" />
+    <Content Include="Imagenes\Nike.png" />
+    <Content Include="Imagenes\Pilsen.png" />
+    <Content Include="Imagenes\RedBull.png" />
+    <Content Include="Imagenes\Sony.png" />
+    <Content Include="Imagenes\Wansos.png" />
     <Content Include="Vistas\Admin\AdministrarUsuario.aspx" />
+    <Content Include="Vistas\Menu.aspx" />
     <Content Include="Vistas\Student\ListExams.aspx" />
     <Content Include="Vistas\Login.aspx" />
-    <Content Include="Prueba.aspx" />
+    <Content Include="Vistas\Student\ResultScreen.aspx" />
     <Content Include="Vistas\Teacher\EditarExamen.aspx" />
     <Content Include="Vistas\Teacher\MenuExams.aspx" />
     <Content Include="Vistas\Registrar.aspx" />
@@ -98,6 +107,13 @@
     <Compile Include="Vistas\Admin\AdministrarUsuario.aspx.designer.cs">
       <DependentUpon>AdministrarUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Student\ListExams.aspx.cs">
       <DependentUpon>ListExams.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,12 +128,12 @@
     <Compile Include="Vistas\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Prueba.aspx.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
+    <Compile Include="Vistas\Student\ResultScreen.aspx.cs">
+      <DependentUpon>ResultScreen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Prueba.aspx.designer.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
+    <Compile Include="Vistas\Student\ResultScreen.aspx.designer.cs">
+      <DependentUpon>ResultScreen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Teacher\EditarExamen.aspx.cs">
       <DependentUpon>EditarExamen.aspx</DependentUpon>

@@ -15,9 +15,28 @@
         .hidden {
             display: none;
         }
+        #btn_next{
+            background-color: #6495ED; 
+            text-align:right;
+            color: white;
+            border-style: ridge;
+            border-color: inherit;
+            border-width: medium;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            -webkit-transition-duration: 0.4s; 
+            transition-duration: 0.4s;
+            background-color: #6495ED; 
+            color: white;
+            margin-left: 37px;
+
+        }
     </style>
 </head>
-<body>
+<body style="width: 1008px;margin-left:200px;border-style:solid">
     <form id="form1" runat="server">
         <div>
             <%-- 
@@ -29,8 +48,10 @@
             <br />
             <div id="here_radios"></div>
             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input id="btn_next" type="button" value="Siguiente" onclick="answer()" />
             <asp:Button ID="btn_finish" runat="server" Text="Terminar" class="hidden" OnClientClick="finish()" OnClick="btn_finish_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HiddenField ID="hf_hook" runat="server" />
         </div>
     </form>

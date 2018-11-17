@@ -9,3 +9,48 @@ C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\
 C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\obj\Debug\InnovaSolutions.pdb
 C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\Newtonsoft.Json.dll
 C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions\InnovaSolutions\bin\Newtonsoft.Json.xml
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csprojResolveAssemblyReference.cache
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csproj.CoreCompileInputs.cache
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.pdb
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll.config
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.pdb
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.xml
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll.config
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.pdb
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.xml
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csprojResolveAssemblyReference.cache
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csproj.CoreCompileInputs.cache
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.dll
+C:\Users\KevinBerrocal\Documents\ULACIT Cuatrimestre 6\Sistemas\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.pdb
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll.config
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.pdb
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.dll
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.xml
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csprojResolveAssemblyReference.cache
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csproj.CoreCompileInputs.cache
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csproj.CopyComplete
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.dll
+C:\Users\XtremePC\Downloads\Pack del Proyecto\Pack del Proyecto\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.pdb
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csprojResolveAssemblyReference.cache
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.csproj.CoreCompileInputs.cache
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.dll
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\obj\Debug\InnovaSolutions.pdb
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll.config
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.dll
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\InnovaSolutions.pdb
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.dll
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Gits\InnovaSolutions\InnovaSolutions (Sprint 2)\InnovaSolutions\bin\Newtonsoft.Json.xml
