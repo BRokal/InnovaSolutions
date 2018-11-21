@@ -1,11 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResponderExamen.aspx.cs" Inherits="InnovaSolutions.ResponderExamen" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+﻿<%@ Page Language="C#" MasterPageFile="~/Vistas/Appshell.Master" AutoEventWireup="true" CodeBehind="ResponderExamen.aspx.cs" Inherits="InnovaSolutions.ResponderExamen" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         #TextArea1 {
             height: 193px;
@@ -15,46 +9,32 @@
         .hidden {
             display: none;
         }
-        #btn_next{
-            background-color: #6495ED; 
-            text-align:right;
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-            margin-left: 37px;
-
-        }
+        
     </style>
-</head>
-<body style="width: 1008px;margin-left:200px;border-style:solid">
-    <form id="form1" runat="server">
-        <div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <div id="div_form" runat="server" style="border-style:solid;">
+        <div class="container" style="width:70%; margin-left:15%">
             <%-- 
                 Formulario Para Responder Examen.
                 El estudiante se le muestra aleatoriamente uno de los exámenes de la 
             --%>
-            <label id="lbl_question"></label><br />
-            <div id="here_image"></div>
-            <br />
-            <div id="here_radios"></div>
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div style="text-align: left; width: 100%">
+                <label id="lbl_question"></label><br />
+                <div id="here_image"></div>
+                <br />
+                <div id="here_radios"></div>
+                <br />
+            </div>
+            
             <input id="btn_next" type="button" value="Siguiente" onclick="answer()" />
-            <asp:Button ID="btn_finish" runat="server" Text="Terminar" class="hidden" OnClientClick="finish()" OnClick="btn_finish_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btn_finish" runat="server" Text="Terminar" CssClass="hidden" OnClientClick="javascript:return finish();" OnClick="btn_finish_Click" />
+
             <asp:HiddenField ID="hf_hook" runat="server" />
+            <br />
+            <asp:Image ID="Image1" runat="server" Height="200px" Width="415px" />
         </div>
-    </form>
+    </div>
 
     <%-- CLIENT CODE --%>
     <script>
@@ -62,6 +42,7 @@
         var answers = []; //Las respuestas dadas por el estudiante
         var results = []; //Un arreglo con booleanos que representa cuales preguntas fueron correctas
         var current = 0; //Representa la pregunta actual
+        var questionCant = <%=questionCant%>;
         check();
         loadQuestion(0);
 
@@ -102,8 +83,7 @@
             img.src = got.grafico;
             img.style.height = "150px";
             img.style.width = "300px";
-
-            here_image.append(got.grafico);
+            
             lbl_question.innerHTML = got.pregunta; //Muestra la Pregunta
             here_image.appendChild(img); //Muestra la imagen.
 
@@ -140,10 +120,11 @@
 
             //Si era la última pregunta entonces se muestra el botón de finalización
             //Si no, entonces se carga la siguiente pregunta basado en "current"
-            if (current >= exam.length) {
+            if (current >= exam.length || current >= questionCant) {
                 lbl_question.innerHTML = "Terminó el Examen!";
                 document.getElementById("btn_next").className = "hidden";
-                document.getElementById("btn_finish").className = "";
+                alert("<%=btn_finish.ClientID%>" + document.getElementById("<%=btn_finish.ClientID%>"));
+                document.getElementById("<%=btn_finish.ClientID%>").className = "";
             }
             else {
                 loadQuestion(current);
@@ -156,14 +137,20 @@
             //Toma y evalúa cada respuesta, empuja un true al arreglo de resultados si la respuesta es correcta y un false si no
             //Se asigna a un comunicador cliente-servidor el arreglo de repsuestas
 
-            for (var i = 0; i < exam.length; i++) {
-                results[i] = (exam[i].correcta == answers[i]);
+            var hf_hook = document.getElementById("<%=hf_hook.ClientID%>");
+
+            alert(hf_hook + ", " + !hf_hook.value);
+            while (!hf_hook.value) {
+                for (var i = 0; i < questionCant; i++) {
+                    results[i] = (exam[i].correcta == answers[i]);
+                }
+                hf_hook.value = results.toString();
+                alert(hf_hook.value);
             }
-            hf_hook.value = results.toString();
+            return true;
         }
     </script>
-</body>
-</html>
+</asp:Content>
 
 <%--
 <asp:RadioButtonList ID="rbl_respuestas" runat="server">

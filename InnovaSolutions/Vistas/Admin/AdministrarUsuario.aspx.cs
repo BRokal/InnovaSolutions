@@ -48,7 +48,7 @@ namespace InnovaSolutions.Vistas
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Menu.aspx");
+            Response.Redirect("../Menu.aspx");
         }
     }
 }

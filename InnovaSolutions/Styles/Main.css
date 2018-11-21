@@ -1,0 +1,37 @@
+﻿body {
+}
+
+.coverimg {
+    position: absolute;
+    top: 104px;
+	bottom: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+    filter: brightness(60%);
+}
+
+.barimg {
+    bottom: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 120px;
+}
+
+.mainTitle {
+    position: absolute;
+    top: 204px;
+    color: white;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Table {
+    width: 100%;
+    word-wrap: break-word;
+    table-layout: fixed;
+}
+
+.hidden {
+    display: none;
+}

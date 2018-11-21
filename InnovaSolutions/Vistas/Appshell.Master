@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Appshell.master.cs" Inherits="InnovaSolutions.Vistas.Appshell" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="../Styles/AppShell.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="container">
+            <div class='cssmenu'>
+                <ul>
+                    <li class='active'><asp:LinkButton ID="home_link" runat="server" OnClick="home_link_Click">Inicio</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="exam_link" runat="server" OnClick="exam_link_Click">Examenes</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="teacher_link" runat="server" OnClick="teacher_link_Click">Profesor</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="account_link" runat="server" OnClick="account_link_Click">Tu Cuenta</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="admin_link" runat="server" OnClick="admin_link_Click">Administrar</asp:LinkButton></li>
+                </ul>
+            </div>
+            <div id="subclasses" runat="server">
+                <div class='cssmenu' id="no_list" runat="server">
+                    
+                </div>  
+
+                <div class='cssmenu hidden' id="exam_list" runat="server">
+                    <ul>
+                        <li><asp:LinkButton ID="list_exams_link" runat="server" OnClick="list_exams_link_Click">Hacer Examenes</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="my_exams_link" runat="server" OnClick="my_exams_link_Click">Mis Resultados</asp:LinkButton></li>
+                    </ul>
+                </div>
+                <div class='cssmenu hidden' id="teacher_list" runat="server">
+                    <ul>
+                        <li><asp:LinkButton ID="list_teacher_link" runat="server" OnClick="list_teacher_link_Click">Examenes</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="create_exam_link" runat="server" OnClick="create_exam_link_Click">Crear Nuevo</asp:LinkButton></li>
+                    </ul>
+                </div>
+                <div class='cssmenu hidden' id="account_list" runat="server">
+                    <ul>
+                        <li><asp:LinkButton ID="signup_account_link" runat="server" OnClick="signup_account_link_Click1">Registrarse</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="login_account_link" runat="server" OnClick="login_account_link_Click1">Ingresar</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="logout_account_link" runat="server" OnClick="logout_account_link_Click1">Cerrar Sesión</asp:LinkButton></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <br />
+
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

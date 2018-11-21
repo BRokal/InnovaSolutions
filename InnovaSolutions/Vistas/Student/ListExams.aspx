@@ -1,27 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListExams.aspx.cs" Inherits="InnovaSolutions.Vistas.ListExams" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Vistas/Appshell.Master" AutoEventWireup="true" CodeBehind="ListExams.aspx.cs" Inherits="InnovaSolutions.Vistas.ListExams" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
                 
     .heading { color: #6495ED;background-color:white }
     </style>
-</head>
-<body style="width: 1085px;margin-left:150px;border-style: solid;">
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <div id="div_form" runat="server" style="text-align:center; border-style: solid;">
         <div>
             <div>
-            <h1 class ="heading"style="width: 250px; margin-left: 630px;">
+            <h1 class ="heading"style="width: 250px;">
 								    Lista <span class="white" id="id-text2">de pruebas</span></h1>
         </div>
             <%-- 
                 Lista los exámenes para que el usuario pueda escoger uno para hacer.
             --%>
-            <asp:GridView ID="grid_exams" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_Examen" DataSourceID="Innova" OnRowCommand="grid_exams_RowCommand" OnSelectedIndexChanged="grid_exams_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" style="margin-left: 429px" Width="594px" >
+            <asp:GridView ID="grid_exams" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_Examen" DataSourceID="Innova" OnRowCommand="grid_exams_RowCommand" OnSelectedIndexChanged="grid_exams_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" Width="100%" GridLines="None" >
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="ID_Examen" HeaderText="ID_Examen" InsertVisible="False" ReadOnly="True" SortExpression="ID_Examen" />
@@ -34,7 +29,7 @@
                                 runat="server" 
                                 Text="Hacer"
                                 CommandName="DoExam"
-                                CommandArgument='<%# Eval("ID_Examen") %>' />
+                                CommandArgument='<%# Eval("ID_Examen") + "," + Eval("Nombre") %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -49,11 +44,13 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
         </div>
-        <div style="margin-left: 640px">
+        <div >
             <asp:SqlDataSource ID="Innova" runat="server" ConnectionString="<%$ ConnectionStrings:InnovaSolutionsConnectionString %>" SelectCommand="SELECT * FROM [Examen]"></asp:SqlDataSource>
+            <br />
+            <asp:Image ID="Image1" runat="server" Height="200px" Width="415px" />
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>
+

@@ -11,7 +11,15 @@ namespace InnovaSolutions.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Image1.ImageUrl = "/Imagenes/Amazon.png";
+            if (Conexion.Membresia_Conectado == "Gratis")
+            {
+                Image1.Visible = true;
+            }
+            else
+            {
+                Image1.Visible = false;
+            }
         }
 
         protected void grid_exams_SelectedIndexChanged(object sender, EventArgs e)
@@ -24,8 +32,10 @@ namespace InnovaSolutions.Vistas
             /*
              * Selecciona un examen y lo dirige a éste
              */
-            int id = Convert.ToInt32(e.CommandArgument);
-            Response.Redirect("./ResponderExamen.aspx?testId=" + id);
+            string[] selected = Convert.ToString(e.CommandArgument).Split(',');
+            string id = Convert.ToString(selected[0]);
+            string name = Convert.ToString(selected[1]);
+            Response.Redirect("./ExamOptions.aspx?testId=" + id + "&examName=" + name);
         }
     }
 }

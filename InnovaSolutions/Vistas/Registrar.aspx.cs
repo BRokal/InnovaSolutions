@@ -19,7 +19,6 @@ namespace InnovaSolutions
         {
             try
             {
-                int num = Int32.Parse(txtId.Text);
                 if (txtUsuario.Text.Trim() == "" || txtContrasena.Text.Trim() == "" || txtConfirmar.Text.Trim() == "")
                 {
                     labMostrar.Text = "Debe llenar todos los espacios";

@@ -70,6 +70,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Styles\AppShell.css" />
+    <Content Include="Styles\LogIn.css" />
+    <Content Include="Styles\Main.css" />
+    <Content Include="Vistas\Appshell.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,14 +92,17 @@
     <Content Include="Imagenes\Wansos.png" />
     <Content Include="Vistas\Admin\AdministrarUsuario.aspx" />
     <Content Include="Vistas\Menu.aspx" />
+    <Content Include="Vistas\Prueba.aspx" />
     <Content Include="Vistas\Student\ListExams.aspx" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\Student\ExamOptions.aspx" />
     <Content Include="Vistas\Student\ResultScreen.aspx" />
     <Content Include="Vistas\Teacher\EditarExamen.aspx" />
     <Content Include="Vistas\Teacher\MenuExams.aspx" />
     <Content Include="Vistas\Registrar.aspx" />
     <Content Include="Vistas\Teacher\CrearExamen.aspx" />
     <Content Include="Vistas\Student\ResponderExamen.aspx" />
+    <Content Include="Vistas\Teacher\BorrarExamen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -107,12 +114,26 @@
     <Compile Include="Vistas\Admin\AdministrarUsuario.aspx.designer.cs">
       <DependentUpon>AdministrarUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Appshell.Master.cs">
+      <DependentUpon>Appshell.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Appshell.Master.designer.cs">
+      <DependentUpon>Appshell.Master</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Prueba.aspx.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Prueba.aspx.designer.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Student\ListExams.aspx.cs">
       <DependentUpon>ListExams.aspx</DependentUpon>
@@ -127,6 +148,13 @@
     </Compile>
     <Compile Include="Vistas\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Student\ExamOptions.aspx.cs">
+      <DependentUpon>ExamOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Student\ExamOptions.aspx.designer.cs">
+      <DependentUpon>ExamOptions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Student\ResultScreen.aspx.cs">
       <DependentUpon>ResultScreen.aspx</DependentUpon>
@@ -171,6 +199,13 @@
     </Compile>
     <Compile Include="Vistas\Student\ResponderExamen.aspx.designer.cs">
       <DependentUpon>ResponderExamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Teacher\BorrarExamen.aspx.cs">
+      <DependentUpon>BorrarExamen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Teacher\BorrarExamen.aspx.designer.cs">
+      <DependentUpon>BorrarExamen.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

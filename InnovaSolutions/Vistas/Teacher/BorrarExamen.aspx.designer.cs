@@ -10,7 +10,7 @@
 namespace InnovaSolutions.Vistas.Student {
     
     
-    public partial class ResultScreen {
+    public partial class BorrarExamen {
         
         /// <summary>
         /// Control div_form.
@@ -22,13 +22,22 @@ namespace InnovaSolutions.Vistas.Student {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_form;
         
         /// <summary>
-        /// Control lbl_result.
+        /// Control lbl_exam.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_result;
+        protected global::System.Web.UI.WebControls.Label lbl_exam;
+        
+        /// <summary>
+        /// Control btn_nope.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_nope;
         
         /// <summary>
         /// Control btn_ok.
@@ -38,14 +47,5 @@ namespace InnovaSolutions.Vistas.Student {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_ok;
-        
-        /// <summary>
-        /// Control Image1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }

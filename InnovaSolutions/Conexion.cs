@@ -96,6 +96,14 @@ namespace InnovaSolutions
             con.Close();
             return existe;
         }
+
+        public static void LogOut()
+        {
+            Id_Conectado = "";
+            Tipo_Conectado = "";
+            Membresia_Conectado = "";
+        }
+
         public string Insertar_Examen(int usuario, int examen, int nota)
         {
             con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=InnovaSolutions;Integrated Security=True");
@@ -116,6 +124,7 @@ namespace InnovaSolutions
             con.Close();
             return msj;
         }
+
         public int Eliminar_Usuario(string usuario)
         {
             int eliminar = 0;

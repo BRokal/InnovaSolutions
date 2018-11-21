@@ -11,8 +11,7 @@ namespace InnovaSolutions.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Image Image1 = new Image();
-            Image1.ImageUrl = "/Imagenes/Amazon.png";
+            Image1.ImageUrl = "/Imagenes/Fortnite.png";
             if (Conexion.Membresia_Conectado == "Gratis")
             {
                 Image1.Visible = true;
@@ -21,7 +20,7 @@ namespace InnovaSolutions.Vistas
             {
                 Image1.Visible = false;
             }
-            
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

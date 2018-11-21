@@ -1,11 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearExamen.aspx.cs" Inherits="InnovaSolutions.CrearExamen" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+﻿<%@ Page Language="C#" MasterPageFile="~/Vistas/Appshell.Master" AutoEventWireup="true" CodeBehind="CrearExamen.aspx.cs" Inherits="InnovaSolutions.CrearExamen" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style type="text/css">
@@ -61,60 +55,11 @@
             border-radius: 10px;
             height: 22px;
             width: 230px;}
-          #btn_back {
-           background-color: #6495ED; 
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 10px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-        }
-          #btn_next {
-           background-color: #6495ED; 
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 10px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-        }
-          #btn_finish {
-           background-color: #6495ED; 
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 10px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-        }
           .heading { color: #6495ED;background-color:white }
     </style>
-    
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <div id="div_form" runat="server">
         <div style="border-style:solid; height: 718px; text-align:center"><div>
                 <h1 class ="heading" style="width: 252px; background-color:white;margin-top:10px"> Crear exámen </h1>
         </div>
@@ -146,8 +91,10 @@
             <asp:Button ID="btn_finish" runat="server" Text="Terminar" OnClientClick="return saveJson(true, saveJsonTwo)" OnClick="btn_finish_Click" />
         
             <asp:HiddenField ID="hf_hook" runat="server" />
+            <br />
+            <asp:Image ID="Image1" runat="server" Height="200px" Width="415px" />
         </div>
-    </form>
+    </div>
 
     <%-- CLIENT CODE --%>
     <script>
@@ -284,17 +231,20 @@
         <%-- BUG: Los radio button no defaultean correctamente --%>
 
         function cstest() {
-            var data = [];
-            exam.forEach(function (e) {
-                if (e["pregunta"] != "" && e["pregunta"] != null) {
-                    data.push(JSON.stringify(e));
-                }
-            });
-            hf_hook.value = data.join("▄");
+            var hf_hook = document.getElementById("<%=hf_hook.ClientID%>");
+
+            while (!hf_hook.value) {
+                var data = [];
+                exam.forEach(function (e) {
+                    if (e["pregunta"] != "" && e["pregunta"] != null) {
+                        data.push(JSON.stringify(e));
+                    }
+                });
+                hf_hook.value = data.join("▄");
+            }
         }
     </script>
-</body>
-</html>
+</asp:Content>
 
 <%--
     exam[index] = data;

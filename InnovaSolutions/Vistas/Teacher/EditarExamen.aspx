@@ -1,11 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarExamen.aspx.cs" Inherits="InnovaSolutions.Vistas.Teacher.EditarExamen" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+﻿<%@ Page Language="C#" MasterPageFile="~/Vistas/Appshell.Master" AutoEventWireup="true" CodeBehind="EditarExamen.aspx.cs" Inherits="InnovaSolutions.Vistas.Teacher.EditarExamen" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .column {
             float: left;
@@ -49,54 +43,7 @@
             border-radius: 10px;
             height: 22px;
             width: 230px;}
-          #btn_back {
-           background-color: #6495ED; 
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 10px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-        }
-          #btn_next {
-           background-color: #6495ED; 
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 10px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-        }
-          #btn_finish {
-           background-color: #6495ED; 
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 10px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-        }
+          
           .heading { color: #6495ED;background-color:white }
         
         #slct_pregunta {
@@ -108,10 +55,9 @@
         }
         
     </style>
-    
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <div id="div_form" runat="server">
         <div style="border-style: solid; height: 670px; text-align:center">
             <div>
                 <h1 class ="heading" style ="width: 252px; background-color:white;margin-top:10px">Editar exámen </h1>
@@ -144,11 +90,13 @@
             <asp:Button ID="btn_finish" runat="server" Text="Terminar" OnClientClick="return saveJson(true, saveJsonTwo)" OnClick="btn_finish_Click" />
         
             <asp:HiddenField ID="hf_hook" runat="server" />
+            <br />
+            <asp:Image ID="Image1" runat="server" Height="200px" Width="415px" />
         
         </div>
-        <div style="margin-left: 560px">
+        <div style="">
         </div>
-    </form>
+    </div>
 
     <%-- CLIENT CODE --%>
     <script>
@@ -301,19 +249,20 @@
         <%-- BUG: Los radio button no defaultean correctamente --%>
 
         function cstest() {
-            var data = [];
-            exam.forEach(function (e) {
-                alert(e["pregunta"]);
-                if (e["pregunta"] != "" && e["pregunta"] != null) {
-                    data.push(JSON.stringify(e));
-                }
-            });
-            hf_hook.value = data.join("▄");
-            alert(hf_hook.value);
+            var hf_hook = document.getElementById("<%=hf_hook.ClientID%>");
+
+            while (!hf_hook.value) {
+                var data = [];
+                exam.forEach(function (e) {
+                    if (e["pregunta"] != "" && e["pregunta"] != null) {
+                        data.push(JSON.stringify(e));
+                    }
+                });
+                hf_hook.value = data.join("▄");
+            }
         }
     </script>
-</body>
-</html>
+</asp:Content>
 
 <%-- if (filter.selectedIndex >= 0) {
                 alert(filter.options[filter.selectedIndex]);

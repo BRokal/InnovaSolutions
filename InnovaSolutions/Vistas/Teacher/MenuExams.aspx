@@ -1,33 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuExams.aspx.cs" Inherits="InnovaSolutions.Vistas.MenuExams" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+﻿<%@ Page Language="C#" MasterPageFile="~/Vistas/Appshell.Master" AutoEventWireup="true" CodeBehind="MenuExams.aspx.cs" Inherits="InnovaSolutions.Vistas.MenuExams" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        #btn_new {
-           background-color: #6495ED; 
-            color: white;
-            border-style: ridge;
-            border-color: inherit;
-            border-width: medium;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 15px;
-            -webkit-transition-duration: 0.4s; 
-            transition-duration: 0.4s;
-            background-color: #6495ED; 
-            color: white;
-        }
+        
          .heading { color: #6495ED;background-color:white }
     </style>
-</head>
-<body style="border-style:solid;">
-    <form id="form1" runat="server" style="text-align:center">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <div id="div_form" runat="server" style="text-align:center; border-style:solid;">
         <div style="">
             <div>
              <h1 class ="heading"style="width: 273px; background-color:white;margin-top:20px">Menú de exámenes</h1>
@@ -49,7 +28,17 @@
                                 runat="server" 
                                 Text="Editar"
                                 CommandName="ChangeExam"
-                                CommandArgument='<%# Eval("ID_Examen") %>' />
+                                CommandArgument='<%# Eval("ID_Examen") + "," + Eval("Nombre") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField ShowHeader="False">
+                        <ItemTemplate>
+                            <asp:Button 
+                                ID="Button2" 
+                                runat="server" 
+                                Text="Eliminar"
+                                CommandName="DeleteExam"
+                                CommandArgument='<%# Eval("ID_Examen") + "," + Eval("Nombre") %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -65,7 +54,8 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <asp:SqlDataSource ID="Innova" runat="server" ConnectionString="<%$ ConnectionStrings:InnovaSolutionsConnectionString %>" SelectCommand="SELECT * FROM [Examen]"></asp:SqlDataSource>
+            <br />
+            <asp:Image ID="Image1" runat="server" Height="200px" Width="415px" />
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>

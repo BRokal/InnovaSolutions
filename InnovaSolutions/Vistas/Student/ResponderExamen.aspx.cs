@@ -22,6 +22,7 @@ namespace InnovaSolutions
         List<int> answers = new List<int>();
 
         public string examOut = "";
+        public int questionCant = 0;
         string user = Conexion.Id_Conectado;
         string test = "";
         int current = 0;
@@ -29,9 +30,19 @@ namespace InnovaSolutions
         protected void Page_Load(object sender, EventArgs e)
         {
             test = Request.QueryString["testId"];
+            questionCant = Convert.ToInt32(Request.QueryString["cant"]);
             if (!IsPostBack)
             {
                 LoadExam();
+            }
+            Image1.ImageUrl = "/Imagenes/Nike.png";
+            if (Conexion.Membresia_Conectado == "Gratis")
+            {
+                Image1.Visible = true;
+            }
+            else
+            {
+                Image1.Visible = false;
             }
         }
 
@@ -46,36 +57,52 @@ namespace InnovaSolutions
              * Ese método se llama después de finish() en el lado del cliente cuando el examen se acaba
              */
 
-            decimal cant = 0; //Cantidad de prteguntas
-            decimal right = 0; //Cantidad de respuestas correctas
-            decimal score = 0; //Nota final
-            System.Diagnostics.Debug.WriteLine(hf_hook.Value);
-
-            //Para cada respuesta, aumente uno a cant y uno a right solamente si la respuesta es true
-            string[] answers = hf_hook.Value.Split(',');
-            foreach(string a in answers)
+            try
             {
-                cant++;
-                if (a.Equals("true"))
+                if (hf_hook.Value.Equals(""))
                 {
-                    right++;
+                    Response.Write("El valor regresado es nulo\n" +
+                        "introduzca los datos una vez mas\n" +
+                        "si esto sucede a menudo contactese con el proveedor");
+                }
+                else
+                {
+                    decimal cant = 0; //Cantidad de prteguntas
+                    decimal right = 0; //Cantidad de respuestas correctas
+                    decimal score = 0; //Nota final
+                    System.Diagnostics.Debug.WriteLine(hf_hook.Value);
+
+                    //Para cada respuesta, aumente uno a cant y uno a right solamente si la respuesta es true
+                    string[] answers = hf_hook.Value.Split(',');
+                    foreach (string a in answers)
+                    {
+                        cant++;
+                        if (a.Equals("true"))
+                        {
+                            right++;
+                        }
+                    }
+                    score = (right / cant) * 100m; //Se calcula la nota final
+
+                    //Se obtiene el usuario regustrado y el id del examen realizado
+                    int id_usuario = Int32.Parse(user);
+                    int id_examen = Int32.Parse(test);
+                    int nota = Convert.ToInt32(score);
+                    if (user.Trim() == "" || test.Trim() == "")
+                    {
+                        Response.Write("<script>alert('Debe llenar todos los espacios');</script>");
+                    }
+                    else
+                    {
+                        //Se llama al método que inserta la complecion del examen al sistema
+                        Response.Write("<script>alert('" + con.Insertar_Examen(id_usuario, id_examen, nota) + "');</script>");
+                        Response.Redirect("ResultScreen.aspx?score=" + score);
+                    }
                 }
             }
-            score = (right / cant) * 100m; //Se calcula la nota final
-
-            //Se obtiene el usuario regustrado y el id del examen realizado
-            int id_usuario = Int32.Parse(user);
-            int id_examen = Int32.Parse(test);
-            int nota = Convert.ToInt32(score);
-            if (user.Trim() == "" || test.Trim() == "")
+            catch (Exception ex)
             {
-                Response.Write("<script>alert('Debe llenar todos los espacios');</script>");
-            }
-            else
-            {
-                //Se llama al método que inserta la complecion del examen al sistema
-                Response.Write("<script>alert('" + con.Insertar_Examen(id_usuario, id_examen, nota) + "');</script>");
-                Response.Redirect("ResultScreen.aspx?score=" + score);
+                System.Diagnostics.Debug.WriteLine(ex + " But hey, you can always try again :)");
             }
         }
 
@@ -84,6 +111,7 @@ namespace InnovaSolutions
             //Método para cargar el examen
             //Se llama al comenzar la clase
 
+            //Se asigna la cantidad de preguntas que se van a hacer
             SqlCommand com;
 
             conex.Open();
